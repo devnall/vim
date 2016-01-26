@@ -28,9 +28,9 @@ filetype plugin indent on   " required
 
 "
 " Formatting
-set fo+=o                   " Insert current comment leader after hitting 'o' or 'O' in Normal mode
-set fo-=r                   " Do not automatically insert a comment leader after an enter
-set fo-=t                   " Do not auto-wrap text using textwidth (doesn't apply to comments)
+set fo-=o                   " Don't insert current comment leader after hitting 'o' or 'O' in Normal mode
+set fo-=r                   " Don't insert a comment leader after an enter
+set fo-=t                   " Don't auto-wrap text using textwidth (doesn't apply to comments)
 
 set nowrap                  " Don't wrap lines
 set textwidth=0             " Don't wrap lines by default
