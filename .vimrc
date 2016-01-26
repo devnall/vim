@@ -42,11 +42,11 @@ set softtabstop=2           " Set the default soft tabstop
 set shiftwidth=2            " Set the default shift width for indents
 set expandtab               " Make tabs into spaces (set by tabstop)
 set smarttab                " Smarter tab levels
-set autoindent
-set cindent
-set cinoptions=:s,ps,ts,cs
+set autoindent              " Indent newline to same level as previous line
+set cindent                 " Enable C program indenting automatically
+set cinoptions=:s,ps,ts,cs   
 set cinwords=if,else,while,do,for,switch,case
-set hlsearch
+set hlsearch                " Highlight search results
 
 syntax enable               " Enable syntax highlighting
 
@@ -55,7 +55,7 @@ set nobackup                " Don't backup files
 set nowritebackup           " Don't write backup files either
 set noswapfile              " Don't create swap files
 
-" Visual
+"{{{ Visual
 set number                  " Turn on line numbers
 set showmatch               " Show matching brackets
 set matchtime=5             " Bracket blinking
@@ -67,18 +67,23 @@ set showcmd                 " Display incomplete commands
 set shortmess=atI           " Shorten messages
 set nolist                  " Display unprintable characters
 set listchars=tab:·\ ,eol:¶,trail:·,extends:»,precedes:«        " Unprintable char mappings
+"}}}
 
+"{{{ Folding---
 set foldenable              " Turn on folding
 set foldmethod=marker       " Fold on the marker
 set foldlevel=100           " Don't autofold anything (can still fold manually)
 set foldopen=block,hor,mark,percent,quickfix,tag  " Define movements which open folds
+"}}}
 
+"{{{ Mouse---
 " Lots of terminal emulators handle the mouse just fine, so find out if it's
 " supported and, if so, enable it. Also, hide mouse when not using it.
 if has ('mouse')
   set mouse=a
   set mousehide
 endif
+"}}}
 
 set splitbelow
 set splitright
