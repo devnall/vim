@@ -34,7 +34,8 @@ set fo-=t                   " Do not auto-wrap text using textwidth (doesn't app
 
 set nowrap                  " Don't wrap lines
 set textwidth=0             " Don't wrap lines by default
-set wildmode=longest,list   " At the CLI, complete longest common string, then list alternatives
+set wildmenu                " Show menu of tab complete expansions
+set wildmode=list:longest,full  " At the CLI, complete longest common string, then list alternatives
 set backspace=indent,eol,start  " Allow backspacing over everything in Insert mode
 set tabstop=2               " Set the default tabstop
 set softtabstop=2           " Set the default soft tabstop
