@@ -1,3 +1,5 @@
+let g:mapleader="<space>"
+
 imap jj <Esc>   " jj to escape insert mode
 
 " navigate splits
