@@ -6,6 +6,7 @@
 TODO: pasting something that contains "jj" (like a cert or gpg key or whatever) will escape insert mode unless you `set paste` first. It's then necessary to `set nopaste` to get my escape sequence back. Need to try to figure out a way around that, probably by auto-setting/unsetting paste mode?
 * `SPACE` - Leader key
 * `CTRL+[hjkl]` - Navigate splits
+* `CTRL+s` - save file (`:w`)
 
 ## Plugins:
 
@@ -33,6 +34,7 @@ Use the FZF (fuzzy finder) command line tool to search for and open files.
 #### Keybinds and Commands
 
 * `CTRL+P` (mapped to `:FZF!`) - general file searcher/opener. Opens selected file in current split.
+
 * `Files [PATH]` - Search files (similar to `:FZF` but allows you to specify starting dir)
 * `GFiles [OPTS]` - Search git files (`git ls-files`). Only seems to work for the dir you were in when you launched vim?
 * `GFiles?` - Search git files (`git status`). Only seems to work for the dir you were in when you launched vim?
