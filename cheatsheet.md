@@ -78,6 +78,15 @@ A git wrapper for vim.
     * `r` - reload status
     * `U` - `git checkout`
 
+### SimpylFold
+
+No BS Python code-folding for vim
+
+#### Keybinds and Commands
+
+Use vim's built-in folding commands to expand and collapse folds.
+The most basic commands are `zc` to close a fold and `zo` to open one.
+You can also toggle (in most cases) with `za`
 
 ## TODOs
 
@@ -88,3 +97,4 @@ A git wrapper for vim.
 * Get syntastic and/or other auto linters setup
 * Get some kind of completion setup (Youcompleteme?)
 * Figure out tabs
+* Fix colorscheme -- everything's too pink and purple
