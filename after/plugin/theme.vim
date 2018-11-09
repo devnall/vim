@@ -5,7 +5,7 @@ if !has('gui_running') | set t_Co=256 | endif
 " lightline config
 set noshowmode " remove redundant --INSERT-- in statusline
 let g:lightline = {
-      \ 'colorscheme': 'OldHope',
+      \ 'colorscheme': 'devnall',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], 
       \             [ 'fugitive', 'readonly', 'filename' ] ]
@@ -24,6 +24,14 @@ let g:lightline = {
       \   'filename': 'LightlineFilename',
       \ },
       \ }
+"let g:lightline.tabline = {
+"      \ 'colorscheme': 'OldHope',
+"      \ 'left': [ ['tabs'] ],
+"      \ 'right': [ ['close'] ]
+"      \ }
+let g:lightline#extensions#tabline#enabled = 2
+"set showtabline=2
+set guioptions-=e
 
 " lightline functions
 function! LightlineReadonly()
