@@ -1,12 +1,44 @@
 # VIM Cheatsheet for my config
 
+## Standard vim stuff that I always forget about
+
+### Windows and Tabs
+
+* `:drop` command will edit a new file, or jump to the window containing it if it already exists. Using `:tab` with it (e.g. `:tab drop {file}`) will open the file in a new tab if it isn't already open.
+* `:tab split` command will copy the current window to a new tab of its own
+* `:tab help` opens a help window in a new tab
+* If you've already opened a file in a window and want it in its own tab, press `CTRL+W` then `T`
+*
+
 ## Non-Standard keybinds
 
 * `jj` - Escape sequence. On the (very rare) occassion that I need to type the string "jj", I wait 3 seconds between the first and second "j"
 TODO: pasting something that contains "jj" (like a cert or gpg key or whatever) will escape insert mode unless you `set paste` first. It's then necessary to `set nopaste` to get my escape sequence back. Need to try to figure out a way around that, probably by auto-setting/unsetting paste mode?
+
 * `SPACE` - Leader key
-* `CTRL+[hjkl]` - Navigate splits
+
 * `CTRL+s` - save file (`:w`)
+* `CTRL+x` - close active window or tab
+
+### Splits and Tabs:
+
+* `CTRL+[hjkl]` - Navigate splits
+* `CTRL+\\` - Create new vertical split
+
+* `CTRL+t` - Create new, empty tab (works in insert mode, too!)
+* `th` - Jump to first tab
+* `tj` - Next tab
+* `tk` - Previous tab
+* `tl` - Jump to last tab
+* `tt` - Create new tab (fills in `:tabedit ` and waits for input; give it the file to open or hit <ENTER> for empty tab
+* `tm <#>` - Move current tab below tab #, 0 to move to far left
+* `ALT+[F1-F0]` - Jump to the Nth tap
+
+
+## Custom Commands:
+
+* `DiffOrig` (especially right after `:tab sp`) - pops a new vertical split with a diff of the current buffer and its file on disk
+
 
 ## Plugins:
 
@@ -88,6 +120,22 @@ Use vim's built-in folding commands to expand and collapse folds.
 The most basic commands are `zc` to close a fold and `zo` to open one.
 You can also toggle (in most cases) with `za`
 
+## Notes & Tips
+
+### Tabs
+
+* Tabs are great for working on small tasks outside of normal workflow without losing your place or getting confused by a ton of buffers. Open a new tab page for .vimrc changes or to hold external command output, chunks of text, etc so that you can quickly switch back to what you were working on before without messing up your window layout or context.
+* Tabs ARE NOT like tabs in e.g. a browser. Forget the whole one file/location/"thing" per tab and instead use them as an extension of the more powerful vim buffer/window paradigm.
+* Preface a `:help` command with `:tab` to keep help doc (or docs, with multiple tabs!) from stealing screen real estate.
+* If you're working in a buffer where you have most folds open, try keeping a second tab page showing the buffer with all folds collapsed for an "at a glance" summary. Use the "at a glance" view to rapidly find and mark a place in the file (`ma` creates a mark that applies to the buffer), then jump to the mark (`'a`) in a different tab showing the same buffer.
+* The inverse of the above would be to have a separate tab page for a detailed view of a buffer where you can enable useful but visually noisy options like `list`, `cursorcolumn`, `cursorline`, and `number`, and you may have several `:match` patterns active, etc. This allows you to keep your regular working view clean and uncluttered but quickly flip over to the information-overloaded version when needed. This works for the settings in `:help option-summary` that are labeled "local to window".
+* If you remove `tabpages` from `sessionoptions`, then `:mksession` will only pay attention to the current tab page. This makes it easy to use tab pages as a lightweight project-organization tool –- just open a set of files in whatever window layout you like, then run `:mksession some-project.vim` to save the current tab page as a session. To work on that set of files again, open a new tab page and `:source` the appropriate session file.
+
+### Executing Shell Commands
+
+* To insert the output of a shell command below the cursor, use `:r !{cmd}`
+*
+
 ## TODOs
 
 * Look into `GFiles`, `GFiles?`, and `Commits` commands only seem to work for the directory you were in when you launched vim; see if there's a way to make it apply to the dir the active file lives in
@@ -98,3 +146,8 @@ You can also toggle (in most cases) with `za`
 * Get some kind of completion setup (Youcompleteme?)
 * Figure out tabs
 * Fix colorscheme -- everything's too pink and purple
+
+## Reference
+
+* http://vim.wikia.com/wiki/Quick_tips_for_using_tab_pages
+*
