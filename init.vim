@@ -22,4 +22,4 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-set rtp+=/Users/dnall/homebrew/opt/fzf
+set rtp+=/usr/local/opt/fzf
