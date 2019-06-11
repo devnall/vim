@@ -42,3 +42,23 @@ endif
 
 " CTRL+n to open NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" CTRL+h to highlight line and column of cursor position
+nnoremap <c-H> :call ToggleCursHilite()<CR>
+
+let g:highlight_toggle_off = 1
+
+function! ToggleCursHilite()
+  if g:highlight_toggle_off
+    set cursorline
+    set cursorcolumn
+    highlight CursorLine cterm=NONE ctermbg=darkblue ctermfg=white
+    highlight CursorColumn cterm=NONE ctermbg=darkblue ctermfg=white
+    let g:highlight_toggle_off = 0
+  else
+    set nocursorline
+    set nocursorcolumn
+    highlight clear
+    let g:highlight_toggle_off = 1
+  endif
+endfunction
