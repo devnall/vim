@@ -17,6 +17,6 @@ tags
 # Persistent undo
 [._]*.un~
 # Plugin binaries, etc
-vendor/*
-bundle/*
-autoload/*
+vendor/**
+bundle/**
+autoload/**
