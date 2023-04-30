@@ -5,7 +5,6 @@ call plug#begin('~/.vim/vendor')
 
 if !has('nvim') && !exists('g:gui_oni') | Plug 'tpope/vim-sensible' | endif
 Plug 'rstacruz/vim-opinion'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mhartington/oceanic-next'
 Plug 'devnall/lightline.vim'
 Plug 'junegunn/fzf.vim'
@@ -17,9 +16,11 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/goyo.vim'
 Plug 'pearofducks/ansible-vim'
+Plug 'christoomey/vim-tmux-navigator'
 "Plug 'vim-scripts/indentpython.vim'
 "Plug 'w0rp/ale'
 "Plug 'Valloric/YouCompleteMe'
+"Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
